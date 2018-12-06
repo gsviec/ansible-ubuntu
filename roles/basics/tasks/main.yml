@@ -1,0 +1,20 @@
+- set_fact: role_name=basics
+
+##################################################
+### Basic system packages and firewall config
+
+- name: Install basic packages
+  apt: pkg={{ item }} state=present
+  with_items:
+   - yum-utils
+   - vim
+   - git
+   - curl
+   - wget
+   - vim
+   - man
+   - zip
+   - unzip
+   - gcc
+   - make
+

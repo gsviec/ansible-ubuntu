@@ -1,0 +1,12 @@
+- name: Install redis
+  yum: pkg={{ item }} state=installed
+  with_items:
+   - redis
+
+- name: Install extension nomad
+  shell: |
+    wget -O nomad.zip https://releases.hashicorp.com/nomad/0.8.6/nomad_0.8.6_linux_amd64.zip
+    gzip nomad.zip
+    chmod +x nomad
+    mv nomad /usr/local/bin
+    
